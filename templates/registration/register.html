@@ -97,7 +97,16 @@
     <div class="register-container">
         <img src="https://via.placeholder.com/100" alt="Avatar">
         <h2>Create Account</h2>
-
+           <!-- Display Messages -->
+           {% if messages %}
+           <div class="messages">
+               {% for message in messages %}
+               <div class="alert alert-{{ message.tags }}">
+                   {{ message }}
+               </div>
+               {% endfor %}
+           </div>
+           {% endif %}
         <form action="{% url 'register' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <input type="text" name="username" class="input-field" placeholder="Username" required>
