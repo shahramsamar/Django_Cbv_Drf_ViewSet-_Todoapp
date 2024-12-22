@@ -129,6 +129,16 @@
             {% endif %}
             <span>Welcome {{ user.username }}</span>
         </div>
+        
+        <!-- Display Messages -->
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ user.username }} {{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
         <div class="auth-buttons">
             {% if user.is_authenticated %}
                 <!-- Logout Button -->
