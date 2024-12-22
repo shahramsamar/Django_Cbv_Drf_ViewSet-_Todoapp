@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, status
 
 
+#  """"""""""""""""""""""""""(ViewSet in CBV)"""""""""""""""""""""""""""""""""""""""
 # class PostViewSet(viewsets.ViewSet):
 #     """Getting a list of posts and creating new posts"""
 #     permission_classes = [IsAuthenticatedOrReadOnly]
@@ -58,6 +59,7 @@ from rest_framework import viewsets, status
 #         post_object = get_object_or_404(self.queryset, pk=pk)
 #         post_object.delete()
 #         return Response(status=status.HTTP_204_NO_CONTENT)
+#  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 #  """"""""""""""""""""""""""(ModelViewSet in CBV)"""""""""""""""""""""""""""""""""""""""
@@ -67,3 +69,6 @@ class PostModelViewSet(viewsets.ModelViewSet):
     permission_classes =[IsAuthenticatedOrReadOnly]
     serializer_class = PostSerializer
     queryset = Post.objects.filter(status=True)
+    
+#  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
